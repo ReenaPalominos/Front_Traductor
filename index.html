@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prototipo Frontend v1.0</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <script src="./js/translator.js"></script>
+  </head>
+
+  <body>
+    <div class="header">
+      <img src="./assets/logo_utem.png" alt="Logo Universidad" />
+      <h1>
+        Prototipo funcional de Traductor <br />Mapudungun-Español Español-Inglés
+      </h1>
+    </div>
+    <div class="translation-container">
+      <div class="language-container">
+        <div class="language-left">
+          <div class="form-container">
+            <form action="#">
+              <label for="lang">Traducir De: </label>
+              <select name="lenguajes" id="lang">
+                <option value="Espanol">Español</option>
+                <option value="Mapudungun">Mapudungun</option>
+                <option value="Ingles">Ingles</option>
+              </select>
+              <!-- <input type="submit" value="Enviar" /> -->
+            </form>
+            <div class="button-icon" onclick="accessEndpoint()">
+              <img src="./assets/microfono.png" class="icon" alt="Microfono" />
+            </div>
+            
+          </div>
+          <div class="input-box">
+            <textarea
+              id="input-text"
+              rows="4"
+              cols="50"
+              placeholder="Texto a traducir"
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="language-right">
+          <div class="form-container-right">
+            <form action="#">
+              <label for="lang">Traducir A: </label>
+              <select name="lenguajes" id="lang">
+                <option value="Espanol">Español</option>
+                <option value="Mapudungun">Mapudungun</option>
+                <option value="Ingles">Ingles</option>
+              </select>
+              <!-- <input type="submit" value="Enviar" /> -->
+            </form>
+            <div class="button-icon" onclick="accessEndpoint()">
+              <img src="./assets/altavoz.png" class="icon" alt="Altavoz" />
+            </div>
+          </div>
+
+          <div class="output-box">
+            <textarea
+              id="output-text"
+              rows="4"
+              cols="50"
+              placeholder="Texto traducido"
+              readonly
+            ></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="translate-button">
+      <button type="button">Traducir</button>
+    </div>
+
+    <div class="footer">
+      <p>
+        Prototipo funcional de Traductor <br />Mapudungun-Español Español-Inglés
+        <br />
+        GPI 2023-1 <br />
+        <img src="./assets/logo_utem2.jpg" alt="Logo Universidad" />
+      </p>
+    </div>
+  </body>
+</html>
