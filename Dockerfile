@@ -5,4 +5,4 @@ FROM nginx
 COPY . /usr/share/nginx/html
 
 # Exponer el puerto 80 para acceder al servidor web
-EXPOSE 80
+EXPOSE 9090
