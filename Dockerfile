@@ -1,8 +1,17 @@
-# Obtener una imagen base de Nginx (u otro servidor web)
-FROM nginx
+# Base image
+FROM nginx:latest
 
-# Copiar los archivos HTML, CSS y JS al directorio del servidor web
-COPY . /usr/share/nginx/html
+# Directorio de trabajo en el contenedor
+WORKDIR /usr/share/nginx/html
 
-# Exponer el puerto 80 para acceder al servidor web
+# Copia los archivos estáticos al contenedor
+COPY ./index.html .
+COPY ./css/style.css ./css/
+COPY ./js/translator.js ./js/
+COPY ./assets/ ./assets/
+
+# Puerto expuesto por el contenedor
 EXPOSE 9090
+
+# Comando de inicio del servidor
+CMD ["nginx", "-g", "daemon off;"]

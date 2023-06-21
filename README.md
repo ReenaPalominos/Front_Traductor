@@ -4,8 +4,12 @@
 docker-compose up -d --build
 ```
 
+Acceder mediante:
+```
+localhost:9090
+```
+
 ## TO-DO LIST
-- Dockerizar
 - Conectar con back
 - Botones funcionales
 - Textos
