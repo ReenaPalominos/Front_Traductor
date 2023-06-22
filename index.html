@@ -21,18 +21,16 @@
         <div class="language-left">
           <div class="form-container">
             <form action="#">
-              <label for="lang">Traducir De: </label>
-              <select name="lenguajes" id="lang">
+              <label for="from-lang">Traducir De: </label>
+              <select name="lenguajes" id="from-lang" onchange="translateText()">
                 <option value="Espanol">Español</option>
                 <option value="Mapudungun">Mapudungun</option>
                 <option value="Ingles">Ingles</option>
               </select>
-              <!-- <input type="submit" value="Enviar" /> -->
             </form>
             <div class="button-icon" onclick="accessMicrophone()">
               <img src="./assets/microfono.png" class="icon" alt="Microfono" />
-            </div>            
-            
+            </div>
           </div>
           <div class="input-box">
             <textarea
@@ -40,26 +38,26 @@
               rows="4"
               cols="50"
               placeholder="Texto a traducir"
+              onchange="translateText()"
             ></textarea>
           </div>
         </div>
-
+        
         <div class="language-right">
           <div class="form-container-right">
             <form action="#">
-              <label for="lang">Traducir A: </label>
-              <select name="lenguajes" id="lang">
+              <label for="to-lang">Traducir A: </label>
+              <select name="lenguajes" id="to-lang" onchange="translateText()">
                 <option value="Espanol">Español</option>
                 <option value="Mapudungun">Mapudungun</option>
                 <option value="Ingles">Ingles</option>
               </select>
-              <!-- <input type="submit" value="Enviar" /> -->
             </form>
-            <div class="button-icon" onclick="speakText()">
+            <div class="button-icon" onclick="speakTranslatedText()">
               <img src="./assets/altavoz.png" class="icon" alt="Altavoz" />
             </div>
           </div>
-
+        
           <div class="output-box">
             <textarea
               id="output-text"
@@ -70,6 +68,7 @@
             ></textarea>
           </div>
         </div>
+        
       </div>
     </div>
 

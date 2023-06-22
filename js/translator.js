@@ -39,24 +39,32 @@ function speakText() {
 }
 
 function translateText() {
+  const fromLang = document.getElementById('from-lang').value;
+const toLang = document.getElementById('to-lang').value;
+
   const inputText = document.getElementById("input-text").value;
 
   // Realizar la solicitud al backend
-  fetch("localhost:8000", {
-    method: "POST", // Puedes utilizar el método HTTP adecuado (POST, GET, etc.)
+  fetch('localhost:8000/', {
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ text: inputText }), // Enviar el texto a traducir en formato JSON
-  })
-    .then((response) => response.json()) // Convertir la respuesta a JSON
-    .then((data) => {
-      const translatedText = data.translatedText; // Obtener el texto traducido de la respuesta
-
-      // Mostrar el texto traducido en el segundo textarea
-      document.getElementById("output-text").value = translatedText;
+    body: JSON.stringify({
+      from: fromLang,
+      to: toLang,
+      text: inputText
     })
-    .catch((error) => {
-      console.error("Error en la solicitud al backend: ", error);
+  })
+    .then(response => response.json())
+    .then(data => {
+      // Aquí puedes manejar la respuesta del backend y actualizar el cuadro de texto de salida con la traducción
+      const translatedText = data.translation;
+      document.getElementById('output-text').value = translatedText;
+    })
+    .catch(error => {
+      // Maneja los errores de la solicitud al backend
+      console.error('Error al obtener la traducción:', error);
     });
+  
 }
