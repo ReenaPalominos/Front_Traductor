@@ -1,5 +1,6 @@
 # Front_Traductor
 ## DOCKER
+(No esta funcionando correctamente) 
 ```
 docker-compose up -d --build
 ```
