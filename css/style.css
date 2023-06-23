@@ -71,10 +71,18 @@ body {
   width: 100%; /* Añadimos un ancho del 100% para ocupar todo el espacio disponible */
   box-sizing: border-box; /* Asegura que el ancho incluya el padding y el borde */
 }
-
+/* 
 .input-box,
 .output-box {
   margin: 10px;
+} */
+
+.input-box{
+  margin-right: 10px;
+}
+
+.output-box{
+  margin-right: 10px;
 }
 
 .input-box textarea,
@@ -87,11 +95,10 @@ body {
   height: 150px;
 }
 
+
 .output-box textarea {
   background-color: #f7f7f7;
 }
-
-
 
 .language-left,
 .language-right{
@@ -101,6 +108,12 @@ body {
   border: 1px solid #ccc;
   padding: 10px;
   /* height: 30px; */
+}
+
+.language-left,
+.language-right {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .form-container,
