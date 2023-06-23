@@ -1,7 +1,20 @@
+@media (max-width: 768px) {
+  /* Estilos para pantallas con un ancho máximo de 768px */
+  .language-container {
+    flex-direction: column;
+  }
+
+  .language-right {
+    margin-top: 10px;
+  }
+}
+
 body {
   text-align: center;
   font-family: Arial, sans-serif;
   background-color: #f7f7f7;
+  background-image: url("..//background/wallpaper-blackpink.jpg");
+  background-size: cover;
   margin: 0;
   padding: 0;
 }
@@ -20,6 +33,7 @@ body {
 }
 
 .footer {
+  background-color: #a8dadc;
   clear: both;
   margin-top: 20px;
 }
@@ -40,7 +54,7 @@ body {
 .language-container{
   display: flex;
   /* flex-direction: row; */
-  justify-content: space-between;
+  justify-content: space-between; 
 }
 
 .text-boxes {
@@ -74,6 +88,7 @@ body {
 
 .language-left,
 .language-right{
+  background-color: #f1faee;
   width: 100%;
   border-radius: 5px;
   border: 1px solid #ccc;
