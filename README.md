@@ -12,6 +12,6 @@ localhost:9090
 
 ## TO-DO LIST
 - Conectar con back
-- Botones funcionales
+- Botones funcionales (50%)
 - Textos
 - Diseño

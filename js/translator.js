@@ -45,7 +45,7 @@ const toLang = document.getElementById('to-lang').value;
   const inputText = document.getElementById("input-text").value;
 
   // Realizar la solicitud al backend
-  fetch('localhost:8000/', {
+  fetch('localhost:31415/', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
