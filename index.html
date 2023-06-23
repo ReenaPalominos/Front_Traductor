@@ -23,9 +23,9 @@
             <form action="#">
               <label for="from-lang">Traducir De: </label>
               <select name="lenguajes" id="from-lang" onchange="translateText()">
-                <option value="Espanol">Español</option>
-                <option value="Mapudungun">Mapudungun</option>
-                <option value="Ingles">Ingles</option>
+                <option value="es">Español</option>
+                <option value="arn">Mapudungun</option>
+                <option value="en">Ingles</option>
               </select>
             </form>
             <div class="button-icon" onclick="accessMicrophone()">
@@ -48,9 +48,9 @@
             <form action="#">
               <label for="to-lang">Traducir A: </label>
               <select name="lenguajes" id="to-lang" onchange="translateText()">
-                <option value="Espanol">Español</option>
-                <option value="Mapudungun">Mapudungun</option>
-                <option value="Ingles">Ingles</option>
+                <option value="es">Español</option>
+                <option value="arn">Mapudungun</option>
+                <option value="en">Ingles</option>
               </select>
             </form>
             <div class="button-icon" onclick="speakTranslatedText()">
@@ -58,7 +58,7 @@
             </div>
           </div>
         
-          <div class="output-box">
+          <div class="output-box" id="output-box-text">
             <textarea
               id="output-text"
               rows="4"

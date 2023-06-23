@@ -40,31 +40,33 @@ function speakText() {
 
 function translateText() {
   const fromLang = document.getElementById('from-lang').value;
-const toLang = document.getElementById('to-lang').value;
-
-  const inputText = document.getElementById("input-text").value;
-
-  // Realizar la solicitud al backend
-  fetch('localhost:31415/', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      from: fromLang,
-      to: toLang,
-      text: inputText
-    })
-  })
-    .then(response => response.json())
-    .then(data => {
-      // Aquí puedes manejar la respuesta del backend y actualizar el cuadro de texto de salida con la traducción
-      const translatedText = data.translation;
-      document.getElementById('output-text').value = translatedText;
-    })
-    .catch(error => {
-      // Maneja los errores de la solicitud al backend
-      console.error('Error al obtener la traducción:', error);
-    });
+  const toLang = document.getElementById('to-lang').value;
+  const inputText = document.getElementById('input-text').value;
+  const outputTextArea = document.getElementById('output-text');
   
+  var myHeaders = new Headers();
+  myHeaders.append('Accept', 'application/json');
+  myHeaders.append('Content-Type', 'application/json');
+
+  var raw = JSON.stringify({
+    from: fromLang,
+    to: toLang,
+    model: 'ml',
+    text: inputText
+  });
+
+  var requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: raw,
+    redirect: 'follow'
+  };
+
+  fetch('http://localhost:31415/translate', requestOptions)
+    .then(response => response.json())
+    .then(result => {
+      console.log(result.translation);
+      outputTextArea.value = result.translation;
+    })
+    .catch(error => console.log('error', error));
 }
