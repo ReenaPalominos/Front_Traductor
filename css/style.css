@@ -1,5 +1,8 @@
+/** STYLE.CSS - ESTILOS DEFINIDOS **/
+/* PENDIENTE: FONTS */
+
+/** RESPONSIVO **/
 @media (max-width: 768px) {
-  /* Estilos para pantallas con un ancho máximo de 768px */
   .language-container {
     flex-direction: column;
   }
@@ -9,6 +12,7 @@
   }
 }
 
+/** BODY **/
 body {
   text-align: center;
   font-family: Arial, sans-serif;
@@ -19,6 +23,7 @@ body {
   padding: 0;
 }
 
+/** HEADER **/
 .header {
   display: flex;
   align-items: center;
@@ -28,11 +33,11 @@ body {
 }
 
 .header img {
-  /* width: 50px; */
   height: 50px;
   margin-right: 10px;
 }
 
+/** RESPONSIVO **/
 .footer {
   background-color: rgba(168, 218, 220, 0.5);
   width: 300px;
@@ -44,13 +49,12 @@ body {
   border-radius: 15px;
 }
 
-
 .footer img {
   height: 50px;
   margin-right: 10px;
 }
 
-
+/** CONTAINER PRINCIPAL **/
 .translation-container {
   display: flex;
   flex-direction: column;
@@ -58,25 +62,44 @@ body {
   margin-top: 20px;
 }
 
+/** CONTAINER SECUNDARIO **/
 .language-container{
   display: flex;
-  /* flex-direction: row; */
   justify-content: space-between; 
 }
 
-.text-boxes {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  width: 100%; /* Añadimos un ancho del 100% para ocupar todo el espacio disponible */
-  box-sizing: border-box; /* Asegura que el ancho incluya el padding y el borde */
+/** CONTAINER IZQUIERDO Y DERECHO **/
+.language-left,
+.language-right{
+  background-color: #f1faee;
+  width: 100%;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
-/* 
-.input-box,
-.output-box {
-  margin: 10px;
-} */
 
+/** SELECCIÓN IDIOMA **/
+.form-container,
+.form-container-right {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/** ICONOS **/
+.button-icon{
+  background: none;
+}
+
+.icon{
+  height: 25px;
+  margin-right: 25px;
+}
+
+/** CAJAS DE TEXTO **/
 .input-box{
   margin-right: 10px;
 }
@@ -85,9 +108,13 @@ body {
   margin-right: 10px;
 }
 
+.output-box textarea {
+  background-color: #f7f7f7;
+}
+
 .input-box textarea,
 .output-box textarea {
-  width: 100%; /* Asegura que el textarea ocupe el 100% del espacio de su contenedor */
+  width: 100%; 
   border-radius: 15px;
   border: 1px solid #ccc;
   padding: 5px;
@@ -95,45 +122,7 @@ body {
   height: 150px;
 }
 
-
-.output-box textarea {
-  background-color: #f7f7f7;
-}
-
-.language-left,
-.language-right{
-  background-color: #f1faee;
-  width: 100%;
-  border-radius: 15px;
-  border: 1px solid #ccc;
-  padding: 10px;
-  /* height: 30px; */
-}
-
-.language-left,
-.language-right {
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-.form-container,
-.form-container-right {
-  width: 100%; /* Ajusta el ancho según sea necesario */
-  /* margin: 10px; */
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.icon{
-  height: 25px;
-  margin-right: 25px;
-}
-
-.button-icon{
-  background: none;
-}
-
+/** BOTÓN TRADUCCIÓN **/
 .translate-button {
   margin-top: 10px;
   text-align: center;
@@ -150,7 +139,6 @@ body {
 }
 
 .translate-button button:hover {
-  /* Estilos para el hover del botón */
   background-color: #555555;
 }
 
