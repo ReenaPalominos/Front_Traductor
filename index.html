@@ -10,17 +10,23 @@
   </head>
 
   <body>
+    <!-- HEADER: Consiste en el logo de la UTEM junto al titulo del proyecto dividido en 2 lineas -->
     <div class="header">
       <img src="./assets/logo_utem.png" alt="Logo Universidad" />
       <h1>
         Prototipo funcional de Traductor <br />Mapudungun-Español Español-Inglés
       </h1>
     </div>
+    <!-- DIV Principal -->
     <div class="translation-container">
+      <!-- DIV que contiene los elementos necesarios para la traducción -->
       <div class="language-container">
+        <!-- DIV Izquierdo, contiene la selección del idioma original y la caja donde se escribe el texto a traducir -->
         <div class="language-left">
+          <!-- DIV Selección idioma del texto a traducir -->
           <div class="form-container">
             <form action="#">
+            <!-- Selección idioma del texto mediante una lista desplegable de opciones donde se envia el valor correspondiente a cada idioma a from-lang que será recibido en translator.js mediante la función translateText() -->
               <label for="from-lang">Traducir De: </label>
               <select name="lenguajes" id="from-lang" onchange="translateText()">
                 <option value="es">Español</option>
@@ -28,10 +34,12 @@
                 <option value="en">Ingles</option>
               </select>
             </form>
+            <!-- Botón que activa el micrófono para la entrada de voz -->
             <div class="button-icon" onclick="accessMicrophone()">
               <img src="./assets/microfono.png" class="icon" alt="Microfono" />
             </div>
           </div>
+          <!-- Caja de texto donde se escribe el texto a traducir -->
           <div class="input-box">
             <textarea
               id="input-text"
@@ -43,21 +51,26 @@
           </div>
         </div>
         
+        <!-- DIV Derecho, contiene la selección del idioma al que se traducirá el texto y la caja donde se muestra el texto traducido -->
         <div class="language-right">
+          <!-- DIV Selección idioma al que se quiere traducir -->
           <div class="form-container-right">
             <form action="#">
+            <!-- Selección idioma al que se quiere traducir mediante una lista desplegable de opciones donde se envia el valor correspondiente a cada idioma a to-lang que será recibido en translator.js mediante la función translateText() -->
               <label for="to-lang">Traducir A: </label>
               <select name="lenguajes" id="to-lang" onchange="translateText()">
-                <option value="es">Español</option>
                 <option value="arn">Mapudungun</option>
+                <option value="es">Español</option>
                 <option value="en">Ingles</option>
               </select>
             </form>
+            <!-- Botón que activa el altavoz para la salida de voz -->
             <div class="button-icon" onclick="speakTranslatedText()">
               <img src="./assets/altavoz.png" class="icon" alt="Altavoz" />
             </div>
           </div>
         
+          <!-- Caja de texto donde se muestra el texto traducido -->
           <div class="output-box" id="output-box-text">
             <textarea
               id="output-text"
@@ -68,14 +81,15 @@
             ></textarea>
           </div>
         </div>
-        
       </div>
     </div>
 
+    <!-- Botón que activa la traducción del texto -->
     <div class="translate-button">
       <button type="button" onclick="translateText()">Traducir</button>
     </div>
 
+    <!-- FOOTER: Consiste en el titulo del proyecto dividido en 2 lineas en la siguiente linea se muestra el ramo GPI 2023-1 y en la siguiente linea se muestra el logo de la Universidad-->
     <div class="footer">
       <p>
         Prototipo funcional de Traductor <br />Mapudungun-Español Español-Inglés
