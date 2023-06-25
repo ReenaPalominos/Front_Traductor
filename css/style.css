@@ -149,3 +149,8 @@ body {
   cursor: pointer;
 }
 
+.translate-button button:hover {
+  /* Estilos para el hover del botón */
+  background-color: #555555;
+}
+
